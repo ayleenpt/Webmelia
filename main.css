@@ -35,44 +35,19 @@ h1 {
   color: #f7ecdf;
 }
 
-.subtitle {
-	font-family: 'newspaper';
-  color: #f7ecdf;
-}
-
 @media (min-width: 1500px) {
-  .subtitle {
-    position: absolute;
-    left: 38%;
-    top: 1.9%;
-    letter-spacing: 4px;
-  }
   .title img {
 	  width: 40%;
   }
 }
 
 @media (min-width: 741px) and (max-width: 1499px) {
-  .subtitle {
-    font-size: 1.3em;
-    position: absolute;
-    left: 33%;
-    top: 5.5%;
-    letter-spacing: 0.5px;
-  }
   .title img {
 	  width: 46%;
   }
 }
 
 @media (max-width: 740px) {
-  .subtitle {
-    position: absolute;
-    left: 13%;
-    top: 1.00%;
-	  font-size: 1.74em;
-    letter-spacing: 2px;
-  }
   .title img {
 	  width: 100%;
   }
