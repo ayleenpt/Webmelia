@@ -361,7 +361,7 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 }
 
 .contact-inputs:focus {
-  border: 2px solid #ff994f;
+  border: 2px solid #b5808f;
 }
 
 .contact-inputs::placeholder {
@@ -383,7 +383,7 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   color: #f7ecdf;
   font-size: 16px;
   font-weight: bold;
-  text-shadow: 1px 1px 0px #b5808f;
+  text-shadow: -1px 1px 5px #623f49;
 }
 
 .contact-form button img {
