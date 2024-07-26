@@ -2,7 +2,7 @@
 	font-family: 'newspaper';
     font-weight: normal;
     font-style: normal;
-    src: url('Fonts/old\ newspaper/OldNewsPaperTypes.ttf');
+    src: url('Fonts/old newspaper/OldNewsPaperTypes.ttf');
 }
 
 [id="T3057851291"].page {
@@ -31,26 +31,15 @@ h1 {
   color: #f7ecdf;
 }
 
-.store-font {
-  color: #f7ecdf;
-}
+@media (min-width: 1500px) { .title img { width: 40%; } }
+@media (min-width: 741px) and (max-width: 1499px) { .title img { width: 60%; } }
+@media (max-width: 740px) { .title img { width: 100%; } }
 
-@media (min-width: 1500px) {
-  .title img {
-	  width: 40%;
-  }
-}
-
-@media (min-width: 741px) and (max-width: 1499px) {
-  .title img {
-	  width: 60%;
-  }
-}
-
-@media (max-width: 740px) {
-  .title img {
-	  width: 100%;
-  }
+.welcome-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .welcome-image {
@@ -74,8 +63,27 @@ h1 {
   transition: opacity 0.3s ease;
 }
 
-.welcome-image:hover .welcome-overlay {
-  opacity: 1;
+.welcome-image:hover .welcome-overlay { opacity: 1; }
+
+.inkwell {
+  width: 15%;
+  position: absolute;
+  left: 7%;
+  top: 45%;
+}
+
+.candle {
+  width: 15%;
+  position: absolute;
+  left: 83%;
+  top: 27%;
+}
+
+.coffee {
+  width: 25%;
+  position: absolute;
+  left: 75%;
+  top: 51%;
 }
 
 @media (min-width: 1500px) {
@@ -103,6 +111,7 @@ h1 {
   .welcome-image {
     width: 100%;
   }
+  .collage-image { display: none; }
 }
 
 .pillar {
@@ -286,10 +295,10 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   /*TODO stack audio-players*/
 }
 
-.pencil {
+.pencil, .feather {
   width: 80%;
   display: block;
   margin: 0 auto;
 }
 
-@media (max-width: 1023px) { .pencil { width: 100%; } }
+@media (max-width: 1023px) { .pencil, .feather { width: 100%; } }
