@@ -282,6 +282,10 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 #progress-true-to-you::-webkit-slider-thumb { background: #616161; }
 #progress-songwriter::-webkit-slider-thumb { background: #4a009f; }
 
+@media (max-width: 1000px) {
+  /*TODO stack audio-players*/
+}
+
 .pencil {
   width: 80%;
   display: block;
