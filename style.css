@@ -114,6 +114,8 @@ h1 {
   .collage-image { display: none; }
 }
 
+/* audio players */
+
 .pillar {
   flex: 1;
   margin: 3%;
@@ -313,3 +315,156 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 }
 
 @media (max-width: 1023px) { .pencil, .feather { width: 100%; } }
+
+/* contact form */
+
+.contact-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.contact-form-title h2 {
+  font-weight: 600;
+  color: #f7ecdf;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.contact-form-title hr {
+  border: none;
+  width: 120px;
+  height: 5px;
+  background: #b5808f;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-inputs {
+  width: 400px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  font-weight: 500;
+  color: #666;
+  border-radius: 50px;
+}
+
+.contact-form textarea {
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+
+.contact-inputs:focus {
+  border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+  color: #a9a9a9;
+}
+
+.contact-form button {
+  display:flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #b5808f, #f7ecdf);
+  cursor: pointer;
+}
+
+.contact-form button img {
+  height: 15px;
+}
+
+@media (max-width: 800px) {
+  .contact-inputs { width: 100%; }
+}
+
+/* footer */
+
+.footer { background-color: #111;}
+
+.footer-container {
+  margin-top: 30px;
+  width: 100%;
+  padding: 20px 0px;
+  background-color: #432b21;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #f7ecdf;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.social-icons a i {
+  font-size: 2em;
+  color: rgb(40, 17, 4);
+  opacity: 0.9;
+}
+
+.social-icons a:hover {
+  background-color: rgb(40, 17, 4);
+  transition: 0.5s;
+}
+
+.social-icons a i:hover {
+  color: #f7ecdf;
+  transition: 0.5s;
+}
+
+.footer-bottom {
+  background-color: #170a01;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-bottom p, .footer-bottom p a {
+  color: #f7ecdf;
+}
+
+.footer-bottom p a {
+  text-decoration: none;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400px;
+  margin: 0px 5px;
+}
+
+.footer-bottom p a:hover { opacity: 1; }
+
+@media (max-width: 800px) {
+  .social-icons a {
+    padding: 8px;
+    margin: 8px;
+  }
+  
+  .social-icons a i {
+    font-size: 1.5em;
+  }
+  
+  .footer-bottom p, .footer-bottom a {
+    font-size: 0.9em;
+  }
+}
