@@ -141,13 +141,8 @@ h1 {
   pointer-events: none;
 }
 
-.pillar:not(.true-to-you-pillar):hover::before {
-  color: #ffffff;
-}
-
-.true-to-you-pillar:hover::before {
-  color: #000000;
-}
+.pillar:not(.true-to-you-pillar):hover::before { color: #ffffff; }
+.true-to-you-pillar:hover::before { color: #000000; }
 
 .pillar::after {
   content: "";
@@ -161,9 +156,7 @@ h1 {
   transition: opacity 0.3s ease;
 }
 
-.pillar:hover::after {
-  opacity: 1;
-}
+.pillar:hover::after { opacity: 1; }
 
 .mama-pillar {
   background-color: #e71c67;
@@ -190,20 +183,28 @@ h1 {
   --data-text: "0";
 }
 
-@media (min-width: 1024px) {
-  .mama-pillar { height: 20px; }
-  .clementine-pillar { height: 20px; }
-  .the-other-end-pillar { height: 20px; }
-  .true-to-you-pillar { height: 20px; }
-  .the-songwriter-pillar { height: 20px; }
+@media (min-width: 1500px) {
+  .mama-pillar { height: 25px; }
+  .clementine-pillar { height: 25px; }
+  .the-other-end-pillar { height: 25px; }
+  .true-to-you-pillar { height: 25px; }
+  .the-songwriter-pillar { height: 25px; }
 }
 
-@media (max-width: 1023px) {
-  .mama-pillar { height: 12px; }
-  .clementine-pillar { height: 12px; }
-  .the-other-end-pillar { height: 12px; }
-  .true-to-you-pillar { height: 12px; }
-  .the-songwriter-pillar { height: 12px; }
+@media (min-width: 741px) and (max-width: 1499px) {
+  .mama-pillar { height: 25px; }
+  .clementine-pillar { height: 25px; }
+  .the-other-end-pillar { height: 25px; }
+  .true-to-you-pillar { height: 25px; }
+  .the-songwriter-pillar { height: 25px; }
+}
+
+@media (max-width: 740px) {
+  .mama-pillar { height: 25px; }
+  .clementine-pillar { height: 25px; }
+  .the-other-end-pillar { height: 25px; }
+  .true-to-you-pillar { height: 25px; }
+  .the-songwriter-pillar { height: 25px; }
 }
 
 .audio-players {
@@ -216,10 +217,10 @@ h1 {
   padding: 25px 35px;
   align-items: center;
   text-align: center;
-  aspect-ratio: 1 / 1; /* Aspect ratio of width:height */
-  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
-  flex: 1 1 calc(19% - 10px); /* Allow flex items to shrink/grow and take into account the gap */
-  margin: 5px; /* Add margin for spacing between items */
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  flex: 1 1 calc(19% - 10px);
+  margin: 5px;
 }
 
 .play-button,
@@ -291,8 +292,18 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 #progress-true-to-you::-webkit-slider-thumb { background: #616161; }
 #progress-songwriter::-webkit-slider-thumb { background: #4a009f; }
 
-@media (max-width: 1000px) {
-  /*TODO stack audio-players*/
+@media (max-width: 740px) {
+  .audio-players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player {
+    width: 100%;
+    max-width: none;
+    margin: 10px 0; /* Add margin for spacing between stacked players */
+  }
 }
 
 .pencil, .feather {
