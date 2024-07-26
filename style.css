@@ -71,21 +71,14 @@ h1 {
   width: 15%;
   position: absolute;
   left: 7%;
-  top: 300px;
+  top: 350px;
 }
 
-.candle {
-  width: 15%;
-  position: absolute;
-  left: 83%;
-  top: 200px;
-}
-
-.coffee {
-  width: 25%;
+.coffee_candle {
+  width: 23%;
   position: absolute;
   left: 75%;
-  top: 500px;
+  top: 280px;
 }
 
 @media (min-width: 1500px) {
