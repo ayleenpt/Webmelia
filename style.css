@@ -31,6 +31,8 @@ h1 {
   color: #f7ecdf;
 }
 
+/* title card */
+
 @media (min-width: 1500px) { .title img { width: 40%; } }
 @media (min-width: 741px) and (max-width: 1499px) { .title img { width: 60%; } }
 @media (max-width: 740px) { .title img { width: 100%; } }
@@ -81,31 +83,10 @@ h1 {
   top: 280px;
 }
 
-@media (min-width: 1500px) {
-  .text {
-    font-size: 180%;
-  }
-  .welcome-image {
-    width: 50%;
-  }
-}
-
-@media (min-width: 741px) and (max-width: 1499px) {
-  .text {
-    font-size: 92%;
-  }
-  .welcome-image {
-    width: 50%;
-  }
-}
+@media (min-width: 741px) { .welcome-image { width: 50%; } }
 
 @media (max-width: 740px) {
-  .text {
-    font-size: 184%;
-  }
-  .welcome-image {
-    width: 100%;
-  }
+  .welcome-image { width: 100%; }
   .collage-image { display: none; }
 }
 
@@ -204,9 +185,7 @@ h1 {
   .the-songwriter-pillar { height: 25px; }
 }
 
-.audio-players {
-  display: flex;
-}
+.audio-players { display: flex; }
 
 .player {
   padding: 5px 10px;
@@ -226,10 +205,7 @@ h1 {
   margin-bottom: -5%;
 }
 
-.play-button:hover,
-.pause-button:hover {
-  cursor: pointer;
-}
+.play-button:hover, .pause-button:hover { cursor: pointer; }
 
 .mama-song .play-button { background-image: url('Images/play buttons/mama_clear.png'); }
 .clementine-song .play-button { background-image: url('Images/play buttons/clementine_clear.png'); }
@@ -357,13 +333,9 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   border-radius: 20px;
 }
 
-.contact-inputs:focus {
-  border: 2px solid #b5808f;
-}
+.contact-inputs:focus { border: 2px solid #b5808f; }
 
-.contact-inputs::placeholder {
-  color: #a9a9a9;
-}
+.contact-inputs::placeholder { color: #a9a9a9; }
 
 .contact-form button {
   display: flex;
@@ -383,13 +355,9 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   text-shadow: -1px 1px 5px #623f49;
 }
 
-.contact-form button img {
-  height: 15px;
-}
+.contact-form button img { height: 15px; }
 
-@media (max-width: 800px) {
-  .contact-inputs { width: 100%; }
-}
+@media (max-width: 800px) { .contact-inputs { width: 100%; } }
 
 /* footer */
 
@@ -440,9 +408,7 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   text-decoration: none;
 }
 
-.website a:hover {
-  opacity: 1;
-}
+.website a:hover { opacity: 1; }
 
 .footer-bottom {
   background-color: #170a01;
@@ -450,9 +416,7 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   text-align: center;
 }
 
-.footer-bottom p, .footer-bottom p a {
-  color: #f7ecdf;
-}
+.footer-bottom p, .footer-bottom p a { color: #f7ecdf; }
 
 .footer-bottom p a {
   text-decoration: none;
