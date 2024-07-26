@@ -25,10 +25,10 @@
     <div class="player mama-song">
       <div class="pillar mama-pillar"></div>
 
-      <div onclick="playPauseMama()" class="play-button" id="ctrlIcon-mama"></div>
+      <div onclick="playPause('mama')" class="play-button" id="ctrlIcon-mama"></div>
       <img class="song-title" src="Images/song titles/mama_title.png" alt="Mama">
 
-      <audio controls id="mama-song">
+      <audio id="mama-song">
         <source src="Mixes/The Songwriter - Mix 2.m4a" type="audio/mpeg">
       </audio>
 
@@ -38,10 +38,10 @@
     <div class="player clementine-song">
       <div class="pillar clementine-pillar"></div>
 
-      <div onclick="playPauseClementine()" class="play-button" id="ctrlIcon-clementine"></div>
+      <div onclick="playPause('clementine')" class="play-button" id="ctrlIcon-clementine"></div>
       <img class="song-title" src="Images/song titles/clementine_title.png" alt="Clementine">
       
-      <audio controls id="clementine-song">
+      <audio id="clementine-song">
         <source src="Mixes/Clementine Mix2.m4a" type="audio/mpeg">
       </audio>
 
@@ -51,10 +51,10 @@
     <div class="player the-other-end-song">
       <div class="pillar the-other-end-pillar"></div>
 
-      <div onclick="playPauseOtherEnd()" class="play-button" id="ctrlIcon-other-end"></div>
+      <div onclick="playPause('the-other-end')" class="play-button" id="ctrlIcon-the-other-end"></div>
       <img class="song-title" src="Images/song titles/other_end_title.png" alt="The Other End">
       
-      <audio controls id="the-other-end-song">
+      <audio id="the-other-end-song">
         <source src="Mixes/The Other End - Mix 2.m4a" type="audio/mpeg">
       </audio>
 
@@ -64,10 +64,10 @@
     <div class="player true-to-you-song">
       <div class="pillar true-to-you-pillar"></div>
 
-      <div onclick="playPauseTrueToYou()" class="play-button" id="ctrlIcon-true-to-you"></div>
+      <div onclick="playPause('true-to-you')" class="play-button" id="ctrlIcon-true-to-you"></div>
       <img class="song-title" src="Images/song titles/true_to_you_title.png" alt="True to You">
       
-      <audio controls id="true-to-you-song">
+      <audio id="true-to-you-song">
         <source src="Mixes/True to You - Mix 2.m4a" type="audio/mpeg">
       </audio>
 
@@ -77,10 +77,10 @@
     <div class="player songwriter-song">
       <div class="pillar the-songwriter-pillar"></div>
 
-      <div onclick="playPauseSongwriter()" class="play-button" id="ctrlIcon-songwriter"></div>
+      <div onclick="playPause('songwriter')" class="play-button" id="ctrlIcon-songwriter"></div>
       <img class="song-title" src="Images/song titles/songwriter_title.png" alt="The Songwriter">
       
-      <audio controls id="songwriter-song">
+      <audio id="songwriter-song">
         <source src="Mixes/The Songwriter - Mix 2.m4a" type="audio/mpeg">
       </audio>
 
@@ -112,7 +112,7 @@
 
     let ctrlIconMama = document.getElementById("ctrlIcon-mama");
     let ctrlIconClementine = document.getElementById("ctrlIcon-clementine");
-    let ctrlIconOtherEnd = document.getElementById("ctrlIcon-other-end");
+    let ctrlIconOtherEnd = document.getElementById("ctrlIcon-the-other-end");
     let ctrlIconTrueToYou = document.getElementById("ctrlIcon-true-to-you");
     let ctrlIconSongwriter = document.getElementById("ctrlIcon-songwriter");
 
@@ -121,18 +121,52 @@
       progressValue.max = songMama.currentTime;
     }
 
-    function playPauseMama() {
-      if (ctrlIconMama.classList.contains("pause-button")) {
-        songMama.pause();
-        ctrlIconMama.classList.remove("pause-button");
-        ctrlIconMama.classList.add("play-button");
-      }
-      else {
-        songMama.play();
-        ctrlIconMama.classList.remove("play-button");
-        ctrlIconMama.classList.add("pause-button");
+    songClementine.onloadmetadata = function () {
+      progressClementine.max = songClementine.duration;
+      progressClementine.max = songClementine.currentTime;
+    }
+
+    songOtherEnd.onloadmetadata = function () {
+      progressOtherEnd.max = songOtherEnd.duration;
+      progressOtherEnd.max = songOtherEnd.currentTime;
+    }
+
+    songTrueToYou.onloadmetadata = function () {
+      progressTrueToYou.max = songTrueToYou.duration;
+      progressTrueToYou.max = songTrueToYou.currentTime;
+    }
+
+    songSongwriter.onloadmetadata = function () {
+      progressSongwriter.max = songSongwriter.duration;
+      progressSongwriter.max = songSongwriter.currentTime;
+    }
+
+    function playPause(id) {
+    const audio = document.getElementById(`${id}-song`);
+    const ctrlIcon = document.getElementById(`ctrlIcon-${id}`);
+
+      if (audio.paused) {
+        audio.play();
+        ctrlIcon.classList.remove("play-button");
+        ctrlIcon.classList.add("pause-button");
+      } else {
+        audio.pause();
+        ctrlIcon.classList.remove("pause-button");
+        ctrlIcon.classList.add("play-button");
       }
     }
+
+    if(songMama.play()) { setInterval(()=>{ progressMama.value = songMama.currentTime; }, 500); }
+    if(songClementine.play()) { setInterval(()=>{ progressClementine.value = songClementine.currentTime; }, 500); }
+    if(songOtherEnd.play()) { setInterval(()=>{ progressOtherEnd.value = songOtherEnd.currentTime; }, 500); }
+    if(songTrueToYou.play()) { setInterval(()=>{ progressTrueToYou.value = songTrueToYou.currentTime; }, 500); }
+    if(songSongwriter.play()) { setInterval(()=>{ progressSongwriter.value = songSongwriter.currentTime; }, 500); }
+
+    progressMama.onchange = function() { songMama.currentTime = progressMama.value; }
+    progressClementine.onchange = function() { songClementine.currentTime = progressClementine.value; }
+    progressOtherEnd.onchange = function() { songOtherEnd.currentTime = progressOtherEnd.value; }
+    progressTrueToYou.onchange = function() { songTrueToYou.currentTime = progressTrueToYou.value; }
+    progressSongwriter.onchange = function() { songSongwriter.currentTime = progressMama.value; }
 
   </script>
 </body>
