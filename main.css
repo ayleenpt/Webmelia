@@ -105,12 +105,6 @@ h1 {
   }
 }
 
-.votes-pillars {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
 .pillar {
   flex: 1;
   margin: 3%;
@@ -202,6 +196,83 @@ h1 {
   .true-to-you-pillar { height: 12px; }
   .the-songwriter-pillar { height: 12px; }
 }
+
+.audio-players {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player {
+  max-width: 19%;
+  height: 40vh;
+  background: #ffe0e5;
+  padding: 25px 35px;
+  align-items: center;
+  text-align: center;
+}
+
+.play-button,
+.pause-button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%; /* Set a fixed width */
+  height: 100%; /* Set a fixed height */
+}
+
+.play-button::hover,
+.pause-button::hover {
+  cursor: pointer;
+}
+
+.mama-song .play-button { background-image: url('Images/play buttons/mama_clear.png'); }
+.clementine-song .play-button { background-image: url('Images/play buttons/clementine_clear.png'); }
+.the-other-end-song .play-button { background-image: url('Images/play buttons/other_end_clear.png'); }
+.true-to-you-song .play-button { background-image: url('Images/play buttons/true_to_you_clear.png'); }
+.songwriter-song .play-button { background-image: url('Images/play buttons/songwriter_clear.png'); }
+
+.mama-song .pause-button { background-image: url('Images/play buttons/mama_full.png'); }
+.clementine-song .pause-button { background-image: url('Images/play buttons/clementine_full.png'); }
+.the-other-end-song .pause-button { background-image: url('Images/play buttons/other_end_full.png'); }
+.true-to-you-song .play-button { background-image: url('Images/play buttons/true_to_you_full.png'); }
+.songwriter-song .pause-button { background-image: url('Images/play buttons/songwriter_full.png'); }
+
+.song-title {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1vh;
+}
+
+input[type="range"][id^="progress-"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 40px 0;
+}
+
+#progress-mama { background: #e71c67; }
+#progress-clementine { background: #f86c3b; }
+#progress-other-end { background: #000000; }
+#progress-true-to-you { background: #ffffff; }
+#progress-songwriter { background: #4a009f; }
+
+input[type="range"][id^="progress-"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+#progress-mama::-webkit-slider-thumb { background: #e71c67; }
+#progress-clementine::-webkit-slider-thumb { background: #f86c3b; }
+#progress-other-end::-webkit-slider-thumb { background: #000000; }
+#progress-true-to-you::-webkit-slider-thumb { background: #616161; }
+#progress-songwriter::-webkit-slider-thumb { background: #4a009f; }
 
 .pencil {
   width: 80%;
