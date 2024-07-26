@@ -35,6 +35,8 @@ h1 {
 @media (min-width: 741px) and (max-width: 1499px) { .title img { width: 60%; } }
 @media (max-width: 740px) { .title img { width: 100%; } }
 
+/* welcome collage */
+
 .welcome-image-container {
   display: flex;
   align-items: center;
@@ -69,21 +71,21 @@ h1 {
   width: 15%;
   position: absolute;
   left: 7%;
-  top: 45%;
+  top: 300px;
 }
 
 .candle {
   width: 15%;
   position: absolute;
   left: 83%;
-  top: 27%;
+  top: 200px;
 }
 
 .coffee {
   width: 25%;
   position: absolute;
   left: 75%;
-  top: 51%;
+  top: 500px;
 }
 
 @media (min-width: 1500px) {
@@ -431,6 +433,19 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 .social-icons a i:hover {
   color: #f7ecdf;
   transition: 0.5s;
+}
+
+.website { text-align: center; }
+
+.website a {
+  opacity: 0.7;
+  font-size: 1.1em;
+  color: #f7ecdf;
+  text-decoration: none;
+}
+
+.website a:hover {
+  opacity: 1;
 }
 
 .footer-bottom {
