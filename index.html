@@ -60,7 +60,14 @@
       </audio>
 
       <input type="range" value="0" id="progress-clementine">
-      <div class="lyrics">lyrics<img src="Images/lyrics/clementine_lyrics.png" alt="clementine lyrics"></div>
+
+      <div class="lyrics" onclick="openLyricsModal('clementine')">lyrics<img src="Images/lyrics/clementine_lyrics.png" alt="clementine lyrics"></div>
+      <div id="lyricsModal-clementine" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeLyricsModal('clementine')">&times;</span>
+          <img id="modalImage-clementine" src="Images/lyrics/clementine_lyrics.png" alt="clementine lyrics" onmouseover="changeImage('clementine', true)" onmouseout="changeImage('clementine', false)">
+        </div>
+      </div>
     </div>
 
     <div class="player the-other-end-song">
@@ -74,7 +81,14 @@
       </audio>
 
       <input type="range" value="0" id="progress-other-end">
-      <div class="lyrics">lyrics<img src="Images/lyrics/other_end_lyrics.png" alt="the other end lyrics"></div>
+
+      <div class="lyrics" onclick="openLyricsModal('other_end')">lyrics<img src="Images/lyrics/other_end_lyrics.png" alt="the other end lyrics"></div>
+      <div id="lyricsModal-other_end" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeLyricsModal('other_end')">&times;</span>
+          <img id="modalImage-other_end" src="Images/lyrics/other_end_lyrics.png" alt="the other end lyrics" onmouseover="changeImage('other_end', true)" onmouseout="changeImage('other_end', false)">
+        </div>
+      </div>
     </div>
 
     <div class="player true-to-you-song">
@@ -88,7 +102,14 @@
       </audio>
 
       <input type="range" value="0" id="progress-true-to-you">
-      <div class="lyrics">lyrics<img src="Images/lyrics/other_end_lyrics.png" alt="true to you lyrics"></div>
+
+      <div class="lyrics" onclick="openLyricsModal('true_to_you')">lyrics<img src="Images/lyrics/true_to_you_lyrics.png" alt="true to you lyrics"></div>
+      <div id="lyricsModal-true_to_you" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeLyricsModal('true_to_you')">&times;</span>
+          <img id="modalImage-true_to_you" src="Images/lyrics/true_to_you_hover_lyrics.png" alt="true to you lyrics" onmouseover="changeImage('true_to_you', true)" onmouseout="changeImage('true_to_you', false)">
+        </div>
+      </div>
     </div>
 
     <div class="player songwriter-song">
@@ -102,7 +123,14 @@
       </audio>
 
       <input type="range" value="0" id="progress-songwriter">
-      <div class="lyrics">lyrics<img src="Images/lyrics/songwriter_lyrics.png" alt="the songwriter lyrics"></div>
+
+      <div class="lyrics" onclick="openLyricsModal('songwriter')">lyrics<img src="Images/lyrics/songwriter_lyrics.png" alt="the songwriter lyrics"></div>
+      <div id="lyricsModal-songwriter" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeLyricsModal('songwriter')">&times;</span>
+          <img id="modalImage-songwriter" src="Images/lyrics/songwriter_lyrics.png" alt="songwriter lyrics" onmouseover="changeImage('songwriter', true)" onmouseout="changeImage('songwriter', false)">
+        </div>
+      </div>
     </div>
   </div>
     
@@ -144,6 +172,7 @@
   </footer>
 
   <script>
+    /* audio players */
     let progressMama = document.getElementById("progress-mama");
     let progressClementine = document.getElementById("progress-clementine");
     let progressOtherEnd = document.getElementById("progress-other-end");
@@ -208,13 +237,27 @@
     progressTrueToYou.onchange = function() { songTrueToYou.currentTime = progressTrueToYou.value; }
     progressSongwriter.onchange = function() { songSongwriter.currentTime = progressMama.value; }
 
-
+    /* lyrics */
     function openLyricsModal(songId) {
-      document.getElementById('lyricsModal-' + songId).style.display = "block";
+      document.getElementById('lyricsModal-' + songId).style.display = "flex"; // Use flex to show the modal
+
+      // Add event listener for Esc key to close the modal
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          closeLyricsModal(songId);
+        }
+      });
     }
 
     function closeLyricsModal(songId) {
       document.getElementById('lyricsModal-' + songId).style.display = "none";
+
+      // Remove event listener for Esc key
+      document.removeEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          closeLyricsModal(songId);
+        }
+      });
     }
 
     function changeImage(songId, isHover) {
