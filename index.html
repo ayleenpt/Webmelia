@@ -39,6 +39,14 @@
       </audio>
 
       <input type="range" value="0" id="progress-mama">
+
+      <div class="lyrics" onclick="openLyricsModal('mama')">lyrics<img src="Images/lyrics/mama_lyrics.png" alt="mama lyrics"></div>
+      <div id="lyricsModal-mama" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeLyricsModal('mama')">&times;</span>
+          <img id="modalImage-mama" src="Images/lyrics/mama_lyrics.png" alt="mama lyrics" onmouseover="changeImage('mama', true)" onmouseout="changeImage('mama', false)">
+        </div>
+      </div>
     </div>
 
     <div class="player clementine-song">
@@ -52,6 +60,7 @@
       </audio>
 
       <input type="range" value="0" id="progress-clementine">
+      <div class="lyrics">lyrics<img src="Images/lyrics/clementine_lyrics.png" alt="clementine lyrics"></div>
     </div>
 
     <div class="player the-other-end-song">
@@ -65,6 +74,7 @@
       </audio>
 
       <input type="range" value="0" id="progress-other-end">
+      <div class="lyrics">lyrics<img src="Images/lyrics/other_end_lyrics.png" alt="the other end lyrics"></div>
     </div>
 
     <div class="player true-to-you-song">
@@ -78,6 +88,7 @@
       </audio>
 
       <input type="range" value="0" id="progress-true-to-you">
+      <div class="lyrics">lyrics<img src="Images/lyrics/other_end_lyrics.png" alt="true to you lyrics"></div>
     </div>
 
     <div class="player songwriter-song">
@@ -91,6 +102,7 @@
       </audio>
 
       <input type="range" value="0" id="progress-songwriter">
+      <div class="lyrics">lyrics<img src="Images/lyrics/songwriter_lyrics.png" alt="the songwriter lyrics"></div>
     </div>
   </div>
     
@@ -196,6 +208,33 @@
     progressTrueToYou.onchange = function() { songTrueToYou.currentTime = progressTrueToYou.value; }
     progressSongwriter.onchange = function() { songSongwriter.currentTime = progressMama.value; }
 
+
+    function openLyricsModal(songId) {
+      document.getElementById('lyricsModal-' + songId).style.display = "block";
+    }
+
+    function closeLyricsModal(songId) {
+      document.getElementById('lyricsModal-' + songId).style.display = "none";
+    }
+
+    function changeImage(songId, isHover) {
+      const modalImage = document.getElementById('modalImage-' + songId);
+      if (isHover) {
+        modalImage.src = 'Images/lyrics/' + songId + '_hover_lyrics.png'; // Change to hover image
+      } else {
+        modalImage.src = 'Images/lyrics/' + songId + '_lyrics.png'; // Change back to original image
+      }
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      const modals = document.getElementsByClassName('modal');
+      for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+          modals[i].style.display = "none";
+        }
+      }
+    }
   </script>
 </body>
 </html>
