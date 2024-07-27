@@ -97,6 +97,7 @@ h1 {
   margin: 3%;
   position: relative;
   transition: opacity 0.3s ease;
+  border-radius: 10px;
 }
 
 .pillar:hover::before {
