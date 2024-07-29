@@ -33,6 +33,8 @@ h1 {
   font-size: 600%;
 }
 
+@media (max-width: 800px) { h1 { font-size: 2.5em; } }
+
 .caption {
 	font-family: 'newspaper';
   color: #f7ecdf;
