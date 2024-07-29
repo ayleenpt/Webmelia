@@ -27,6 +27,14 @@
   <img class="feather" src="Images/collage items/feather_shadow.png">
   <br>
 
+  <div id="instructions" style="text-align: center;" class="lyrics" onclick="openLyricsModal('instructions')"><h1>instructions</h1><img src="Images/lyrics/instructions_lyrics.png" alt="instructions"></div>
+  <div id="lyricsModal-instructions" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLyricsModal('instructions')">&times;</span>
+      <img id="modalImage-instructions" src="Images/lyrics/instructions_lyrics.png" alt="instructions" onmouseover="changeImage('instructions', true)" onmouseout="changeImage('instructions', false)">
+    </div>
+  </div>
+
   <div class="audio-players">
     <div class="player mama-song">
       <div class="pillar mama-pillar"></div>

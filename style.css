@@ -99,6 +99,18 @@ h1 {
   .collage-image { display: none; }
 }
 
+/* instructions */
+#instructions {
+  font-family: 'newspaper';
+  color: #f7ecdf;
+  font-size: 1em;
+  opacity: 1;
+}
+
+#instructions:hover { opacity: 0.8; }
+
+@media (max-width: 800px) { h1 { font-size: 2.5em; } }
+
 /* audio players */
 
 .pillar {
@@ -334,7 +346,8 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 }
 
 #lyricsModal-clementine .modal-content img,
-#lyricsModal-songwriter .modal-content img {
+#lyricsModal-songwriter .modal-content img,
+#lyricsModal-instructions .modal-content img {
   width: 80vh;
   height: auto;
 }
