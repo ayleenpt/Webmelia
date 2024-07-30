@@ -451,6 +451,7 @@ column-unit img { max-height: 50vh; max-width: 100%;}
 }
 
 .contact-form-title h2 {
+  font-family: 'newspaper';
   font-weight: 600;
   color: #f7ecdf;
   font-size: 40px;
@@ -461,7 +462,7 @@ column-unit img { max-height: 50vh; max-width: 100%;}
   border: none;
   width: 120px;
   height: 5px;
-  background: #b5808f;
+  background: #220b01;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -494,11 +495,12 @@ column-unit img { max-height: 50vh; max-width: 100%;}
   gap: 10px;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(270deg, #b5808f, #f7ecdf);
+  background: linear-gradient(270deg, #220b01, #765d3f);
   cursor: pointer;
 }
 
 .contact-form .button-text {
+  font-family: 'newspaper';
   color: #f7ecdf;
   font-size: 16px;
   font-weight: bold;
