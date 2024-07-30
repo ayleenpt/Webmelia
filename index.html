@@ -52,7 +52,9 @@
       <div id="lyricsModal-mama" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeLyricsModal('mama')">&times;</span>
-          <img id="modalImage-mama" src="Images/lyrics/mama_lyrics.png" alt="mama lyrics" onmouseover="changeImage('mama', true)" onmouseout="changeImage('mama', false)">
+          <button class="prev" onclick="navigateLyrics('mama', -1)">&#10094;</button>
+          <img id="modalImage-mama" src="Images/lyrics/mama_lyrics_1.png" alt="mama lyrics" onmouseover="changeImage('mama', true)" onmouseout="changeImage('mama', false)">
+          <button class="next" onclick="navigateLyrics('mama', 1)">&#10095;</button>
         </div>
       </div>
     </div>
@@ -3601,6 +3603,31 @@
     progressSongwriter.onchange = function() { songSongwriter.currentTime = progressSongwriter.value; }
 
     /* lyrics */
+
+    let currentImageIndex = 0;
+    const images = {
+      "mama": [
+        { normal: 'Images/lyrics/mama_lyrics_1.png', hover: 'Images/lyrics/mama_hover_lyrics_1.png' },
+        { normal: 'Images/lyrics/mama_lyrics_2.png', hover: 'Images/lyrics/mama_hover_lyrics_2.png' }
+      ]
+    };
+
+    function navigateLyrics(songId, direction) {
+      currentImageIndex = (currentImageIndex + direction + images[songId].length) % images[songId].length;
+      updateModalImage(songId);
+    }
+
+    function updateModalImage(songId) {
+      const modalImage = document.getElementById('modalImage-' + songId);
+      modalImage.src = images[songId][currentImageIndex].normal;
+      modalImage.onmouseover = function() {
+        this.src = images[songId][currentImageIndex].hover;
+      };
+      modalImage.onmouseout = function() {
+        this.src = images[songId][currentImageIndex].normal;
+      };
+    }
+
     function openLyricsModal(songId) {
       document.getElementById('lyricsModal-' + songId).style.display = "flex"; // Use flex to show the modal
 

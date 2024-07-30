@@ -346,6 +346,33 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   margin: 0 auto;
 }
 
+button.prev, button.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border: none;
+  background-color: rgba(185, 168, 168, 0.5);
+}
+
+button.prev:hover, button.next:hover {
+  background-color: rgba(224, 217, 217, 0.8);
+}
+
+button.prev {
+  left: 0;
+}
+
+button.next {
+  right: 0;
+}
+
 #lyricsModal-clementine .modal-content img,
 #lyricsModal-songwriter .modal-content img,
 #lyricsModal-instructions .modal-content img {
@@ -368,6 +395,13 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 .lyrics img { 
   display: none; 
   width: 100%;
+}
+
+@media (max-width: 740px) {
+  button.prev, button.next {
+    font-size: 14px;
+    padding: 12px;
+  }
 }
 
 /* store */
