@@ -3556,34 +3556,29 @@
     let songTrueToYou = document.getElementById("true-to-you-song");
     let songSongwriter = document.getElementById("songwriter-song");
 
-    songMama.onloadmetadata = function () {
+    songMama.addEventListener('loadedmetadata', function() {
       progressMama.max = songMama.duration;
-      progressValue.max = songMama.currentTime;
-    }
+    });
 
-    songClementine.onloadmetadata = function () {
+    songClementine.addEventListener('loadedmetadata', function() {
       progressClementine.max = songClementine.duration;
-      progressClementine.max = songClementine.currentTime;
-    }
+    });
 
-    songOtherEnd.onloadmetadata = function () {
+    songOtherEnd.addEventListener('loadedmetadata', function() {
       progressOtherEnd.max = songOtherEnd.duration;
-      progressOtherEnd.max = songOtherEnd.currentTime;
-    }
+    });
 
-    songTrueToYou.onloadmetadata = function () {
+    songTrueToYou.addEventListener('loadedmetadata', function() {
       progressTrueToYou.max = songTrueToYou.duration;
-      progressTrueToYou.max = songTrueToYou.currentTime;
-    }
+    });
 
-    songSongwriter.onloadmetadata = function () {
+    songSongwriter.addEventListener('loadedmetadata', function() {
       progressSongwriter.max = songSongwriter.duration;
-      progressSongwriter.max = songSongwriter.currentTime;
-    }
+    });
 
     function playPause(id) {
-    const audio = document.getElementById(`${id}-song`);
-    const ctrlIcon = document.getElementById(`ctrlIcon-${id}`);
+      const audio = document.getElementById(`${id}-song`);
+      const ctrlIcon = document.getElementById(`ctrlIcon-${id}`);
 
       if (audio.paused) {
         audio.play();
@@ -3596,17 +3591,42 @@
       }
     }
 
-    if(songMama.play()) { setInterval(()=>{ progressMama.value = songMama.currentTime; }, 500); }
-    if(songClementine.play()) { setInterval(()=>{ progressClementine.value = songClementine.currentTime; }, 500); }
-    if(songOtherEnd.play()) { setInterval(()=>{ progressOtherEnd.value = songOtherEnd.currentTime; }, 500); }
-    if(songTrueToYou.play()) { setInterval(()=>{ progressTrueToYou.value = songTrueToYou.currentTime; }, 500); }
-    if(songSongwriter.play()) { setInterval(()=>{ progressSongwriter.value = songSongwriter.currentTime; }, 500); }
+    setInterval(() => {
+      progressMama.max = songMama.duration;
+      progressMama.value = songMama.currentTime;
 
-    progressMama.onchange = function() { songMama.currentTime = progressMama.value; }
-    progressClementine.onchange = function() { songClementine.currentTime = progressClementine.value; }
-    progressOtherEnd.onchange = function() { songOtherEnd.currentTime = progressOtherEnd.value; }
-    progressTrueToYou.onchange = function() { songTrueToYou.currentTime = progressTrueToYou.value; }
-    progressSongwriter.onchange = function() { songSongwriter.currentTime = progressSongwriter.value; }
+      progressClementine.max = songClementine.duration;
+      progressClementine.value = songClementine.currentTime;
+      
+      progressOtherEnd.max = songOtherEnd.duration;
+      progressOtherEnd.value = songOtherEnd.currentTime;
+      
+      progressTrueToYou.max = songTrueToYou.duration;
+      progressTrueToYou.value = songTrueToYou.currentTime;
+      
+      progressSongwriter.max = songSongwriter.duration;
+      progressSongwriter.value = songSongwriter.currentTime;
+    }, 500);
+
+    progressMama.addEventListener('input', function() {
+      songMama.currentTime = progressMama.value;
+    });
+
+    progressClementine.addEventListener('input', function() {
+      songClementine.currentTime = progressClementine.value;
+    });
+
+    progressOtherEnd.addEventListener('input', function() {
+      songOtherEnd.currentTime = progressOtherEnd.value;
+    });
+
+    progressTrueToYou.addEventListener('input', function() {
+      songTrueToYou.currentTime = progressTrueToYou.value;
+    });
+
+    progressSongwriter.addEventListener('input', function() {
+      songSongwriter.currentTime = progressSongwriter.value;
+    });
 
     /* lyrics */
 
