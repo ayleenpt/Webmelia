@@ -3628,6 +3628,36 @@
       songSongwriter.currentTime = progressSongwriter.value;
     });
 
+    songMama.addEventListener('ended', function() {
+      const ctrlIcon = document.getElementById("ctrlIcon-mama");
+      ctrlIcon.classList.remove("pause-button");
+      ctrlIcon.classList.add("play-button");
+    });
+
+    songClementine.addEventListener('ended', function() {
+      const ctrlIcon = document.getElementById("ctrlIcon-clementine");
+      ctrlIcon.classList.remove("pause-button");
+      ctrlIcon.classList.add("play-button");
+    });
+
+    songOtherEnd.addEventListener('ended', function() {
+      const ctrlIcon = document.getElementById("ctrlIcon-the-other-end");
+      ctrlIcon.classList.remove("pause-button");
+      ctrlIcon.classList.add("play-button");
+    });
+
+    songTrueToYou.addEventListener('ended', function() {
+      const ctrlIcon = document.getElementById("ctrlIcon-true-to-you");
+      ctrlIcon.classList.remove("pause-button");
+      ctrlIcon.classList.add("play-button");
+    });
+
+    songSongwriter.addEventListener('ended', function() {
+      const ctrlIcon = document.getElementById("ctrlIcon-songwriter");
+      ctrlIcon.classList.remove("pause-button");
+      ctrlIcon.classList.add("play-button");
+    });
+
     /* lyrics */
 
     let currentImageIndex = 0;
