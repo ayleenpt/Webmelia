@@ -85,11 +85,11 @@ h1 {
   top: 350px;
 }
 
-.coffee_candle {
+.coffee {
   width: 23%;
   position: absolute;
   left: 75%;
-  top: 280px;
+  top: 430px;
 }
 
 @media (min-width: 741px) { .welcome-image { width: 50%; } }
@@ -297,7 +297,8 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
 .pencil, .feather {
   width: 80%;
   display: block;
-  margin: 0 auto;
+  margin: 2% auto;
+  margin-bottom: -5%;
 }
 
 @media (max-width: 1023px) { .pencil, .feather { width: 100%; } }
@@ -377,7 +378,7 @@ column-set {
 }
 
 column-unit { margin: 10px 10px;}
-column-unit img { width: 100%; height: auto; }
+column-unit img { max-height: 50vh; max-width: 100%;}
 .column-1 { width: 25%; height: 100%; }
 .column-2 { width: 25%; height: 100%; }
 .column-3 { width: 25%; height: 100%; }
@@ -391,10 +392,11 @@ column-unit img { width: 100%; height: auto; }
 
 @media (max-width: 800px) {
   column-set { flex-direction: column; align-items: center;}
-  .column-1 { width: 90vw; height: auto; }
+  .column-1 { width: 90vw; height: auto;}
   .column-2 { width: 85vw; height: auto; }
   .column-3 { width: 85vw; height: auto; }
   .column-4 { width: 85vw; height: auto; }
+  .column-1 img { display: block; margin: 0 auto; }
 }
 
 /* contact form */
@@ -509,7 +511,7 @@ column-unit img { width: 100%; height: auto; }
 
 .social-icons a i:hover {
   color: #f7ecdf;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .website { text-align: center; }
