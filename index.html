@@ -48,12 +48,12 @@
 
       <input type="range" value="0" id="progress-mama">
 
-      <div class="lyrics" onclick="openLyricsModal('mama')">lyrics<img src="Images/lyrics/mama_lyrics.png" alt="mama lyrics"></div>
+      <div class="lyrics" onclick="openLyricsModal('mama')">lyrics<img src="Images/lyrics/mama_lyrics_1.png" alt="mama lyrics"></div>
       <div id="lyricsModal-mama" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeLyricsModal('mama')">&times;</span>
           <button class="prev" onclick="navigateLyrics('mama', -1)">&#10094;</button>
-          <img id="modalImage-mama" src="Images/lyrics/mama_lyrics_1.png" alt="mama lyrics" onmouseover="changeImage('mama', true)" onmouseout="changeImage('mama', false)">
+          <img id="modalImage-mama" src="Images/lyrics/mama_lyrics_1.png" alt="mama lyrics">
           <button class="next" onclick="navigateLyrics('mama', 1)">&#10095;</button>
         </div>
       </div>
@@ -3630,6 +3630,8 @@
 
     function openLyricsModal(songId) {
       document.getElementById('lyricsModal-' + songId).style.display = "flex"; // Use flex to show the modal
+
+      if(songId == "mama") updateModalImage("mama");
 
       // Add event listener for Esc key to close the modal
       document.addEventListener('keydown', function(event) {

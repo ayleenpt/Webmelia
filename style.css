@@ -375,7 +375,8 @@ button.next {
 
 #lyricsModal-clementine .modal-content img,
 #lyricsModal-songwriter .modal-content img,
-#lyricsModal-instructions .modal-content img {
+#lyricsModal-instructions .modal-content img,
+#lyricsModal-mama .modal-content img {
   width: 80vh;
   height: auto;
 }
