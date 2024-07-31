@@ -572,14 +572,12 @@ column-unit img { max-height: 50vh; max-width: 100%;}
 
 .footer-bottom p a {
   text-decoration: none;
-  opacity: 0.7;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
-  margin: 0px 5px;
 }
 
-.footer-bottom p a:hover { opacity: 1; }
+.ayleen:hover { opacity: 0.7; text-decoration: underline;}
 
 @media (max-width: 800px) {
   .social-icons a {
