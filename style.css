@@ -577,7 +577,8 @@ column-unit img { max-height: 50vh; max-width: 100%;}
   font-weight: 400;
 }
 
-.ayleen:hover { opacity: 0.7; text-decoration: underline;}
+.ayleen { opacity: 0.7;}
+.ayleen:hover { opacity: 1;}
 
 @media (max-width: 800px) {
   .social-icons a {
