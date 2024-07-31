@@ -468,17 +468,20 @@ column-unit img { max-height: 50vh; max-width: 100%;}
 }
 
 .contact-inputs {
+  font-family: 'newspaper';
+  font-size: 1em;
   width: 400px;
   height: 50px;
   border: none;
   outline: none;
   padding-left: 25px;
-  font-weight: 500;
   color: #666;
   border-radius: 50px;
 }
 
 .contact-form textarea {
+  font-family: 'newspaper';
+  font-size: 1em;
   height: 140px;
   padding-top: 15px;
   border-radius: 20px;
