@@ -23,8 +23,9 @@
 body {
   background-image: url("Images/background.png");
   background-attachment: scroll;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
+  background-repeat: repeat;
 }
 
 h1 {
