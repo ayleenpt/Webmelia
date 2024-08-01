@@ -251,7 +251,7 @@ h1 {
   height: auto;
 }
 
-input[type="range"][id^="progress-"] {
+input[type="range"][id^="progress"] {
   -webkit-appearance: none;
   width: 100%;
   height: 6px;
@@ -260,13 +260,13 @@ input[type="range"][id^="progress-"] {
   margin: 20px 0;
 }
 
-#progress-mama { background: #e71c67; }
+#progressMama { background: #e71c67; }
 #progress-clementine { background: #f86c3b; }
 #progress-other-end { background: #000000; }
 #progress-true-to-you { background: #ffffff; }
 #progress-songwriter { background: #4a009f; }
 
-input[type="range"][id^="progress-"]::-webkit-slider-thumb {
+input[type="range"][id^="progress"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 30px;
   height: 30px;
@@ -275,7 +275,7 @@ input[type="range"][id^="progress-"]::-webkit-slider-thumb {
   box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
 }
 
-#progress-mama::-webkit-slider-thumb { background: #e71c67; }
+#progressMama::-webkit-slider-thumb { background: #e71c67; }
 #progress-clementine::-webkit-slider-thumb { background: #f86c3b; }
 #progress-other-end::-webkit-slider-thumb { background: #000000; }
 #progress-true-to-you::-webkit-slider-thumb { background: #616161; }

@@ -39,15 +39,15 @@
     <div class="player mama-song">
       <div class="pillar mama-pillar"></div>
 
-      <div onclick="playPause('mama')" class="play-button" id="ctrlIcon-mama"></div>
+      <div onclick="playPauseMama()" class="play-button" id="ctrlMama"></div>
       <img class="song-title" src="Images/song titles/mama_title.png" alt="Mama">
 
-      <audio id="mama-song">
+      <audio controls id="songMama">
         <source src="Mixes/mama.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
 
-      <input type="range" value="0" id="progress-mama">
+      <input type="range" value="0" id="progressMama">
 
       <div class="lyrics" onclick="openLyricsModal('mama')">lyrics<img src="Images/lyrics/mama_lyrics_1.png" alt="mama lyrics"></div>
       <div id="lyricsModal-mama" class="modal">
@@ -3545,118 +3545,44 @@
 
   <script>
     /* audio players */
-    let progressMama = document.getElementById("progress-mama");
-    let progressClementine = document.getElementById("progress-clementine");
-    let progressOtherEnd = document.getElementById("progress-other-end");
-    let progressTrueToYou = document.getElementById("progress-true-to-you");
-    let progressSongwriter = document.getElementById("progress-songwriter");
 
-    let songMama = document.getElementById("mama-song");
-    let songClementine = document.getElementById("clementine-song");
-    let songOtherEnd = document.getElementById("the-other-end-song");
-    let songTrueToYou = document.getElementById("true-to-you-song");
-    let songSongwriter = document.getElementById("songwriter-song");
+    // Mama
+    let progressMama = document.getElementById("progressMama");
+    let songMama = document.getElementById("songMama");
+    let ctrlMama = document.getElementById("ctrlMama");
 
-    songMama.addEventListener('loadedmetadata', function() {
+    songMama.onloadedmetadata = function() {
       progressMama.max = songMama.duration;
-    });
+      progressMama.value = songMama.currentTime;
+    }
 
-    songClementine.addEventListener('loadedmetadata', function() {
-      progressClementine.max = songClementine.duration;
-    });
-
-    songOtherEnd.addEventListener('loadedmetadata', function() {
-      progressOtherEnd.max = songOtherEnd.duration;
-    });
-
-    songTrueToYou.addEventListener('loadedmetadata', function() {
-      progressTrueToYou.max = songTrueToYou.duration;
-    });
-
-    songSongwriter.addEventListener('loadedmetadata', function() {
-      progressSongwriter.max = songSongwriter.duration;
-    });
-
-    function playPause(id) {
-      const audio = document.getElementById(`${id}-song`);
-      const ctrlIcon = document.getElementById(`ctrlIcon-${id}`);
-
-      if (audio.paused) {
-        audio.play();
-        ctrlIcon.classList.remove("play-button");
-        ctrlIcon.classList.add("pause-button");
-      } else {
-        audio.pause();
-        ctrlIcon.classList.remove("pause-button");
-        ctrlIcon.classList.add("play-button");
+    function playPauseMama() {
+      if(ctrlMama.classList.contains("pause-button")){
+        songMama.pause();
+        ctrlMama.classList.remove("pause-button");
+        ctrlMama.classList.add("play-button");
+      }
+      else{
+        songMama.play();
+        ctrlMama.classList.remove("play-button");
+        ctrlMama.classList.add("pause-button");
       }
     }
 
-    setInterval(() => {
+    if(songMama.play()){
+      setInterval(()=>{
+        progressMama.value = songMama.currentTime;
+      },500);
+    }
+
+    progressMama.onchange = function(){
       progressMama.max = songMama.duration;
-      progressMama.value = songMama.currentTime;
-
-      progressClementine.max = songClementine.duration;
-      progressClementine.value = songClementine.currentTime;
-      
-      progressOtherEnd.max = songOtherEnd.duration;
-      progressOtherEnd.value = songOtherEnd.currentTime;
-      
-      progressTrueToYou.max = songTrueToYou.duration;
-      progressTrueToYou.value = songTrueToYou.currentTime;
-      
-      progressSongwriter.max = songSongwriter.duration;
-      progressSongwriter.value = songSongwriter.currentTime;
-    }, 500);
-
-    progressMama.addEventListener('input', function() {
       songMama.currentTime = progressMama.value;
-    });
-
-    progressClementine.addEventListener('input', function() {
-      songClementine.currentTime = progressClementine.value;
-    });
-
-    progressOtherEnd.addEventListener('input', function() {
-      songOtherEnd.currentTime = progressOtherEnd.value;
-    });
-
-    progressTrueToYou.addEventListener('input', function() {
-      songTrueToYou.currentTime = progressTrueToYou.value;
-    });
-
-    progressSongwriter.addEventListener('input', function() {
-      songSongwriter.currentTime = progressSongwriter.value;
-    });
+    }
 
     songMama.addEventListener('ended', function() {
-      const ctrlIcon = document.getElementById("ctrlIcon-mama");
-      ctrlIcon.classList.remove("pause-button");
-      ctrlIcon.classList.add("play-button");
-    });
-
-    songClementine.addEventListener('ended', function() {
-      const ctrlIcon = document.getElementById("ctrlIcon-clementine");
-      ctrlIcon.classList.remove("pause-button");
-      ctrlIcon.classList.add("play-button");
-    });
-
-    songOtherEnd.addEventListener('ended', function() {
-      const ctrlIcon = document.getElementById("ctrlIcon-the-other-end");
-      ctrlIcon.classList.remove("pause-button");
-      ctrlIcon.classList.add("play-button");
-    });
-
-    songTrueToYou.addEventListener('ended', function() {
-      const ctrlIcon = document.getElementById("ctrlIcon-true-to-you");
-      ctrlIcon.classList.remove("pause-button");
-      ctrlIcon.classList.add("play-button");
-    });
-
-    songSongwriter.addEventListener('ended', function() {
-      const ctrlIcon = document.getElementById("ctrlIcon-songwriter");
-      ctrlIcon.classList.remove("pause-button");
-      ctrlIcon.classList.add("play-button");
+        ctrlMama.classList.remove("pause-button");
+        ctrlMama.classList.add("play-button");
     });
 
     /* lyrics */
