@@ -106,9 +106,10 @@ h1 {
   color: #f7ecdf;
   font-size: 1em;
   opacity: 1;
+  cursor: default;
 }
 
-#instructions:hover { opacity: 0.8; }
+#instructions a:hover { opacity: 0.8; cursor: pointer;}
 
 @media (max-width: 800px) { h1 { font-size: 2.5em; } }
 
