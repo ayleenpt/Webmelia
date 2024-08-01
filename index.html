@@ -42,7 +42,7 @@
       <div onclick="playPauseMama()" class="play-button" id="ctrlMama"></div>
       <img class="song-title" src="Images/song titles/mama_title.png" alt="Mama">
 
-      <audio controls id="songMama">
+      <audio id="songMama">
         <source src="Mixes/mama.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
@@ -63,15 +63,15 @@
     <div class="player clementine-song">
       <div class="pillar clementine-pillar"></div>
 
-      <div onclick="playPause('clementine')" class="play-button" id="ctrlIcon-clementine"></div>
+      <div onclick="playPauseClementine()" class="play-button" id="ctrlClementine"></div>
       <img class="song-title" src="Images/song titles/clementine_title.png" alt="Clementine">
       
-      <audio id="clementine-song">
+      <audio id="songClementine">
         <source src="Mixes/clementine.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
 
-      <input type="range" value="0" id="progress-clementine">
+      <input type="range" value="0" id="progressClementine">
 
       <div class="lyrics" onclick="openLyricsModal('clementine')">lyrics<img src="Images/lyrics/clementine_lyrics.png" alt="clementine lyrics"></div>
       <div id="lyricsModal-clementine" class="modal">
@@ -85,15 +85,15 @@
     <div class="player the-other-end-song">
       <div class="pillar the-other-end-pillar"></div>
 
-      <div onclick="playPause('the-other-end')" class="play-button" id="ctrlIcon-the-other-end"></div>
+      <div onclick="playPauseOtherEnd()" class="play-button" id="ctrlOtherEnd"></div>
       <img class="song-title" src="Images/song titles/other_end_title.png" alt="The Other End">
       
-      <audio id="the-other-end-song">
+      <audio id="songOtherEnd">
         <source src="Mixes/other-end.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
 
-      <input type="range" value="0" id="progress-other-end">
+      <input type="range" value="0" id="progressOtherEnd">
 
       <div class="lyrics" onclick="openLyricsModal('other_end')">lyrics<img src="Images/lyrics/other_end_lyrics.png" alt="the other end lyrics"></div>
       <div id="lyricsModal-other_end" class="modal">
@@ -107,15 +107,15 @@
     <div class="player true-to-you-song">
       <div class="pillar true-to-you-pillar"></div>
 
-      <div onclick="playPause('true-to-you')" class="play-button" id="ctrlIcon-true-to-you"></div>
+      <div onclick="playPauseTrueToYou()" class="play-button" id="ctrlTrueToYou"></div>
       <img class="song-title" src="Images/song titles/true_to_you_title.png" alt="True to You">
       
-      <audio id="true-to-you-song">
+      <audio id="songTrueToYou">
         <source src="Mixes/true-to-you.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
 
-      <input type="range" value="0" id="progress-true-to-you">
+      <input type="range" value="0" id="progressTrueToYou">
 
       <div class="lyrics" onclick="openLyricsModal('true_to_you')">lyrics<img src="Images/lyrics/true_to_you_lyrics.png" alt="true to you lyrics"></div>
       <div id="lyricsModal-true_to_you" class="modal">
@@ -129,15 +129,15 @@
     <div class="player songwriter-song">
       <div class="pillar the-songwriter-pillar"></div>
 
-      <div onclick="playPause('songwriter')" class="play-button" id="ctrlIcon-songwriter"></div>
+      <div onclick="playPauseSongwriter()" class="play-button" id="ctrlSongwriter"></div>
       <img class="song-title" src="Images/song titles/songwriter_title.png" alt="The Songwriter">
       
-      <audio id="songwriter-song">
+      <audio id="songSongwriter">
         <source src="Mixes/songwriter.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
 
-      <input type="range" value="0" id="progress-songwriter">
+      <input type="range" value="0" id="progressSongwriter">
 
       <div class="lyrics" onclick="openLyricsModal('songwriter')">lyrics<img src="Images/lyrics/songwriter_lyrics.png" alt="the songwriter lyrics"></div>
       <div id="lyricsModal-songwriter" class="modal">
@@ -3581,8 +3581,174 @@
     }
 
     songMama.addEventListener('ended', function() {
-        ctrlMama.classList.remove("pause-button");
-        ctrlMama.classList.add("play-button");
+      ctrlMama.classList.remove("pause-button");
+      ctrlMama.classList.add("play-button");
+      progressMama.value = 0;
+      songMama.currentTime = progressMama.value;
+    });
+
+    // Clementine
+    let progressClementine = document.getElementById("progressClementine");
+    let songClementine = document.getElementById("songClementine");
+    let ctrlClementine = document.getElementById("ctrlClementine");
+
+    songClementine.onloadedmetadata = function() {
+      progressClementine.max = songClementine.duration;
+      progressClementine.value = songClementine.currentTime;
+    }
+
+    function playPauseClementine() {
+      if(ctrlClementine.classList.contains("pause-button")){
+        songClementine.pause();
+        ctrlClementine.classList.remove("pause-button");
+        ctrlClementine.classList.add("play-button");
+      }
+      else{
+        songClementine.play();
+        ctrlClementine.classList.remove("play-button");
+        ctrlClementine.classList.add("pause-button");
+      }
+    }
+
+    if(songClementine.play()){
+      setInterval(()=>{
+        progressClementine.value = songClementine.currentTime;
+      },500);
+    }
+
+    progressClementine.onchange = function(){
+      progressClementine.max = songClementine.duration;
+      songClementine.currentTime = progressClementine.value;
+    }
+
+    songClementine.addEventListener('ended', function() {
+      ctrlClementine.classList.remove("pause-button");
+      ctrlClementine.classList.add("play-button");
+      progressClementine.value = 0;
+      songClementine.currentTime = progressClementine.value;
+    });
+
+    // The Other End
+    let progressOtherEnd = document.getElementById("progressOtherEnd");
+    let songOtherEnd = document.getElementById("songOtherEnd");
+    let ctrlOtherEnd = document.getElementById("ctrlOtherEnd");
+
+    songOtherEnd.onloadedmetadata = function() {
+      progressOtherEnd.max = songOtherEnd.duration;
+      progressOtherEnd.value = songOtherEnd.currentTime;
+    }
+
+    function playPauseOtherEnd() {
+      if(ctrlOtherEnd.classList.contains("pause-button")){
+        songOtherEnd.pause();
+        ctrlOtherEnd.classList.remove("pause-button");
+        ctrlOtherEnd.classList.add("play-button");
+      }
+      else{
+        songOtherEnd.play();
+        ctrlOtherEnd.classList.remove("play-button");
+        ctrlOtherEnd.classList.add("pause-button");
+      }
+    }
+
+    if(songOtherEnd.play()){
+      setInterval(()=>{
+        progressOtherEnd.value = songOtherEnd.currentTime;
+      },500);
+    }
+
+    progressOtherEnd.onchange = function(){
+      progressOtherEnd.max = songOtherEnd.duration;
+      songOtherEnd.currentTime = progressOtherEnd.value;
+    }
+
+    songOtherEnd.addEventListener('ended', function() {
+      ctrlOtherEnd.classList.remove("pause-button");
+      ctrlOtherEnd.classList.add("play-button");
+      progressOtherEnd.value = 0;
+      songOtherEnd.currentTime = progressOtherEnd.value;
+    });
+
+    // True to You
+    let progressTrueToYou = document.getElementById("progressTrueToYou");
+    let songTrueToYou = document.getElementById("songTrueToYou");
+    let ctrlTrueToYou = document.getElementById("ctrlTrueToYou");
+
+    songTrueToYou.onloadedmetadata = function() {
+      progressTrueToYou.max = songTrueToYou.duration;
+      progressTrueToYou.value = songTrueToYou.currentTime;
+    }
+
+    function playPauseTrueToYou() {
+      if(ctrlTrueToYou.classList.contains("pause-button")){
+        songTrueToYou.pause();
+        ctrlTrueToYou.classList.remove("pause-button");
+        ctrlTrueToYou.classList.add("play-button");
+      }
+      else{
+        songTrueToYou.play();
+        ctrlTrueToYou.classList.remove("play-button");
+        ctrlTrueToYou.classList.add("pause-button");
+      }
+    }
+
+    if(songTrueToYou.play()){
+      setInterval(()=>{
+        progressTrueToYou.value = songTrueToYou.currentTime;
+      },500);
+    }
+
+    progressTrueToYou.onchange = function(){
+      progressTrueToYou.max = songTrueToYou.duration;
+      songTrueToYou.currentTime = progressTrueToYou.value;
+    }
+
+    songTrueToYou.addEventListener('ended', function() {
+      ctrlTrueToYou.classList.remove("pause-button");
+      ctrlTrueToYou.classList.add("play-button");
+      progressTrueToYou.value = 0;
+      songTrueToYou.currentTime = progressTrueToYou.value;
+    });
+
+    // The Songwriter
+    let progressSongwriter = document.getElementById("progressSongwriter");
+    let songSongwriter = document.getElementById("songSongwriter");
+    let ctrlSongwriter = document.getElementById("ctrlSongwriter");
+
+    songSongwriter.onloadedmetadata = function() {
+      progressSongwriter.max = songSongwriter.duration;
+      progressSongwriter.value = songSongwriter.currentTime;
+    }
+
+    function playPauseSongwriter() {
+      if(ctrlSongwriter.classList.contains("pause-button")){
+        songSongwriter.pause();
+        ctrlSongwriter.classList.remove("pause-button");
+        ctrlSongwriter.classList.add("play-button");
+      }
+      else{
+        songSongwriter.play();
+        ctrlSongwriter.classList.remove("play-button");
+        ctrlSongwriter.classList.add("pause-button");
+      }
+    }
+
+    if(songSongwriter.play()){
+      setInterval(()=>{
+        progressSongwriter.value = songSongwriter.currentTime;
+      },500);
+    }
+
+    progressSongwriter.onchange = function(){
+      progressSongwriter.max = songSongwriter.duration;
+      songSongwriter.currentTime = progressSongwriter.value;
+    }
+
+    songSongwriter.addEventListener('ended', function() {
+      ctrlSongwriter.classList.remove("pause-button");
+      ctrlSongwriter.classList.add("play-button");
+      progressSongwriter.value = 0;
+      songSongwriter.currentTime = progressSongwriter.value;
     });
 
     /* lyrics */

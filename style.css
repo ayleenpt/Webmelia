@@ -262,10 +262,10 @@ input[type="range"][id^="progress"] {
 }
 
 #progressMama { background: #e71c67; }
-#progress-clementine { background: #f86c3b; }
-#progress-other-end { background: #000000; }
-#progress-true-to-you { background: #ffffff; }
-#progress-songwriter { background: #4a009f; }
+#progressClementine { background: #f86c3b; }
+#progressOtherEnd { background: #000000; }
+#progressTrueToYou { background: #ffffff; }
+#progressSongwriter { background: #4a009f; }
 
 input[type="range"][id^="progress"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -277,10 +277,10 @@ input[type="range"][id^="progress"]::-webkit-slider-thumb {
 }
 
 #progressMama::-webkit-slider-thumb { background: #e71c67; }
-#progress-clementine::-webkit-slider-thumb { background: #f86c3b; }
-#progress-other-end::-webkit-slider-thumb { background: #000000; }
-#progress-true-to-you::-webkit-slider-thumb { background: #616161; }
-#progress-songwriter::-webkit-slider-thumb { background: #4a009f; }
+#progressClementine::-webkit-slider-thumb { background: #f86c3b; }
+#progressOtherEnd::-webkit-slider-thumb { background: #000000; }
+#progressTrueToYou::-webkit-slider-thumb { background: #616161; }
+#progressSongwriter::-webkit-slider-thumb { background: #4a009f; }
 
 @media (max-width: 740px) {
   .audio-players {
