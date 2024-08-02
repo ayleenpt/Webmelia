@@ -220,12 +220,6 @@ h1 {
 .true-to-you-song .play-button { background-image: url('Images/play buttons/true_to_you_clear.png'); }
 .songwriter-song .play-button { background-image: url('Images/play buttons/songwriter_clear.png'); }
 
-.mama-song .play-button:hover { background-image: url('Images/play buttons/mama_full.png'); }
-.clementine-song .play-button:hover { background-image: url('Images/play buttons/clementine_full.png'); }
-.the-other-end-song .play-button:hover { background-image: url('Images/play buttons/other_end_full.png'); }
-.true-to-you-song .play-button:hover { background-image: url('Images/play buttons/true_to_you_full.png'); }
-.songwriter-song .play-button:hover { background-image: url('Images/play buttons/songwriter_full.png'); }
-
 .mama-song .pause-button { background-image: url('Images/play buttons/mama_full.png'); }
 .clementine-song .pause-button { background-image: url('Images/play buttons/clementine_full.png'); }
 .the-other-end-song .pause-button { background-image: url('Images/play buttons/other_end_full.png'); }
@@ -280,6 +274,14 @@ input[type="range"][id^="progress"]::-webkit-slider-thumb {
     max-width: none;
     margin: 10px 0; /* Add margin for spacing between stacked players */
   }
+}
+
+@media (min-width: 741px) {
+  .mama-song .play-button:hover { background-image: url('Images/play buttons/mama_full.png'); }
+  .clementine-song .play-button:hover { background-image: url('Images/play buttons/clementine_full.png'); }
+  .the-other-end-song .play-button:hover { background-image: url('Images/play buttons/other_end_full.png'); }
+  .true-to-you-song .play-button:hover { background-image: url('Images/play buttons/true_to_you_full.png'); }
+  .songwriter-song .play-button:hover { background-image: url('Images/play buttons/songwriter_full.png'); }
 }
 
 .pencil, .feather {
