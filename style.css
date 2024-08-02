@@ -142,8 +142,6 @@ h1 {
 .pillar:not(.true-to-you-pillar):before { color: #ffffff; }
 .true-to-you-pillar:before { color: #000000; }
 
-.pillar:hover::after { opacity: 1; }
-
 .mama-pillar {
   background-color: #e71c67;
   --data-text: "0";
