@@ -121,6 +121,7 @@ h1 {
   position: relative;
   transition: opacity 0.3s ease;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);
 }
 
 .pillar:before {
