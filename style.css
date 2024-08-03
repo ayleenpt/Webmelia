@@ -257,7 +257,7 @@ input[type="range"][id^="progress"]::-webkit-slider-thumb {
   }
 }
 
-@media (pointer: fine) {
+@media (min-width: 741px) {
   .mama-song .play-button:hover { background-image: url('Images/play buttons/mama_full.png'); }
   .clementine-song .play-button:hover { background-image: url('Images/play buttons/clementine_full.png'); }
   .the-other-end-song .play-button:hover { background-image: url('Images/play buttons/other_end_full.png'); }
