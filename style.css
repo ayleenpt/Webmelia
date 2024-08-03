@@ -144,54 +144,36 @@ h1 {
 
 .mama-pillar {
   background-color: #e71c67;
-  --data-text: "0";
+  --data-text: "2";
 }
 
 .clementine-pillar {
   background-color: #f86c3b;
-  --data-text: "0";
+  --data-text: "2";
 }
 
 .the-other-end-pillar {
   background-color: #000000;
-  --data-text: "0";
+  --data-text: "9";
 }
 
 .true-to-you-pillar {
   background-color: #ffffff;
-  --data-text: "0";
+  --data-text: "4";
 }
 
 .the-songwriter-pillar {
   background-color: #4a009f;
-  --data-text: "0";
+  --data-text: "5";
 }
 
-@media (min-width: 1500px) {
-  .mama-pillar { height: 25px; }
-  .clementine-pillar { height: 25px; }
-  .the-other-end-pillar { height: 25px; }
-  .true-to-you-pillar { height: 25px; }
-  .the-songwriter-pillar { height: 25px; }
-}
+.mama-pillar { height: 25px; }
+.clementine-pillar { height: 25px; }
+.the-other-end-pillar { height: 90px; }
+.true-to-you-pillar { height: 40px; }
+.the-songwriter-pillar { height: 50px; }
 
-@media (min-width: 741px) and (max-width: 1499px) {
-  .mama-pillar { height: 25px; }
-  .clementine-pillar { height: 25px; }
-  .the-other-end-pillar { height: 25px; }
-  .true-to-you-pillar { height: 25px; }
-  .the-songwriter-pillar { height: 25px; }
-}
-
-@media (max-width: 740px) {
-  .mama-pillar { height: 25px; }
-  .clementine-pillar { height: 25px; }
-  .the-other-end-pillar { height: 25px; }
-  .true-to-you-pillar { height: 25px; }
-  .the-songwriter-pillar { height: 25px; }
-}
-
-.audio-players { display: flex; }
+.audio-players { display: flex; align-items: end;}
 
 .player {
   padding: 5px 10px;
