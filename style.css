@@ -150,7 +150,7 @@ h1 {
 
 .clementine-pillar {
   background-color: #f86c3b;
-  --data-text: "2";
+  --data-text: "3";
 }
 
 .the-other-end-pillar {
@@ -160,7 +160,7 @@ h1 {
 
 .true-to-you-pillar {
   background-color: #ffffff;
-  --data-text: "4";
+  --data-text: "5";
 }
 
 .the-songwriter-pillar {
@@ -169,9 +169,9 @@ h1 {
 }
 
 .mama-pillar { height: 25px; }
-.clementine-pillar { height: 25px; }
+.clementine-pillar { height: 30px; }
 .the-other-end-pillar { height: 90px; }
-.true-to-you-pillar { height: 40px; }
+.true-to-you-pillar { height: 50px; }
 .the-songwriter-pillar { height: 50px; }
 
 .audio-players { display: flex; align-items: end;}
