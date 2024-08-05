@@ -145,7 +145,7 @@ h1 {
 
 .mama-pillar {
   background-color: #e71c67;
-  --data-text: "2";
+  --data-text: "4";
 }
 
 .clementine-pillar {
@@ -168,7 +168,7 @@ h1 {
   --data-text: "5";
 }
 
-.mama-pillar { height: 25px; }
+.mama-pillar { height: 40px; }
 .clementine-pillar { height: 30px; }
 .the-other-end-pillar { height: 90px; }
 .true-to-you-pillar { height: 50px; }
