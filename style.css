@@ -155,24 +155,24 @@ h1 {
 
 .the-other-end-pillar {
   background-color: #000000;
-  --data-text: "9";
+  --data-text: "10";
 }
 
 .true-to-you-pillar {
   background-color: #ffffff;
-  --data-text: "5";
+  --data-text: "6";
 }
 
 .the-songwriter-pillar {
   background-color: #4a009f;
-  --data-text: "5";
+  --data-text: "6";
 }
 
 .mama-pillar { height: 40px; }
 .clementine-pillar { height: 30px; }
-.the-other-end-pillar { height: 90px; }
-.true-to-you-pillar { height: 50px; }
-.the-songwriter-pillar { height: 50px; }
+.the-other-end-pillar { height: 100px; }
+.true-to-you-pillar { height: 60px; }
+.the-songwriter-pillar { height: 60px; }
 
 .audio-players { display: flex; align-items: end;}
 
