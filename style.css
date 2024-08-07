@@ -150,7 +150,7 @@ h1 {
 
 .clementine-pillar {
   background-color: #f86c3b;
-  --data-text: "3";
+  --data-text: "11";
 }
 
 .the-other-end-pillar {
@@ -165,14 +165,14 @@ h1 {
 
 .the-songwriter-pillar {
   background-color: #4a009f;
-  --data-text: "6";
+  --data-text: "7";
 }
 
 .mama-pillar { height: 40px; }
-.clementine-pillar { height: 30px; }
+.clementine-pillar { height: 110px; }
 .the-other-end-pillar { height: 100px; }
 .true-to-you-pillar { height: 60px; }
-.the-songwriter-pillar { height: 60px; }
+.the-songwriter-pillar { height: 70px; }
 
 .audio-players { display: flex; align-items: end;}
 
