@@ -121,7 +121,7 @@ h1 {
   position: relative;
   transition: opacity 0.3s ease;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);
+  box-shadow: 2px 2px 5px rgba(29, 13, 0, 0.6);
 }
 
 .pillar:before {
@@ -145,7 +145,7 @@ h1 {
 
 .mama-pillar {
   background-color: #e71c67;
-  --data-text: "4";
+  --data-text: "8";
 }
 
 .clementine-pillar {
@@ -155,7 +155,7 @@ h1 {
 
 .the-other-end-pillar {
   background-color: #000000;
-  --data-text: "10";
+  --data-text: "12";
 }
 
 .true-to-you-pillar {
@@ -165,14 +165,14 @@ h1 {
 
 .the-songwriter-pillar {
   background-color: #4a009f;
-  --data-text: "7";
+  --data-text: "8";
 }
 
-.mama-pillar { height: 40px; }
+.mama-pillar { height: 80px; }
 .clementine-pillar { height: 110px; }
-.the-other-end-pillar { height: 100px; }
+.the-other-end-pillar { height: 120px; }
 .true-to-you-pillar { height: 60px; }
-.the-songwriter-pillar { height: 70px; }
+.the-songwriter-pillar { height: 80px; }
 
 .audio-players { display: flex; align-items: end;}
 
