@@ -169,10 +169,10 @@ h1 {
 }
 
 .mama-pillar { height: 120px; }
-.clementine-pillar { height: 300; }
-.the-other-end-pillar { height: 200; }
-.true-to-you-pillar { height: 130; }
-.the-songwriter-pillar { height: 260; }
+.clementine-pillar { height: 300px; }
+.the-other-end-pillar { height: 200px; }
+.true-to-you-pillar { height: 130px; }
+.the-songwriter-pillar { height: 260px; }
 
 .audio-players { display: flex; align-items: end;}
 
