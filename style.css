@@ -145,7 +145,7 @@ h1 {
 
 .mama-pillar {
   background-color: #e71c67;
-  --data-text: "15";
+  --data-text: "24";
 }
 
 .clementine-pillar {
@@ -160,7 +160,7 @@ h1 {
 
 .true-to-you-pillar {
   background-color: #ffffff;
-  --data-text: "30";
+  --data-text: "31";
 }
 
 .the-songwriter-pillar {
@@ -168,10 +168,10 @@ h1 {
   --data-text: "33";
 }
 
-.mama-pillar { height: 150px; }
+.mama-pillar { height: 240px; }
 .clementine-pillar { height: 300px; }
 .the-other-end-pillar { height: 210px; }
-.true-to-you-pillar { height: 300px; }
+.true-to-you-pillar { height: 310px; }
 .the-songwriter-pillar { height: 330px; }
 
 .audio-players { display: flex; align-items: end;}
