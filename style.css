@@ -145,12 +145,12 @@ h1 {
 
 .mama-pillar {
   background-color: #e71c67;
-  --data-text: "24";
+  --data-text: "26";
 }
 
 .clementine-pillar {
   background-color: #f86c3b;
-  --data-text: "30";
+  --data-text: "36";
 }
 
 .the-other-end-pillar {
@@ -160,19 +160,19 @@ h1 {
 
 .true-to-you-pillar {
   background-color: #ffffff;
-  --data-text: "31";
+  --data-text: "36";
 }
 
 .the-songwriter-pillar {
   background-color: #4a009f;
-  --data-text: "33";
+  --data-text: "40";
 }
 
-.mama-pillar { height: 240px; }
-.clementine-pillar { height: 300px; }
+.mama-pillar { height: 260px; }
+.clementine-pillar { height: 360px; }
 .the-other-end-pillar { height: 210px; }
-.true-to-you-pillar { height: 310px; }
-.the-songwriter-pillar { height: 330px; }
+.true-to-you-pillar { height: 360px; }
+.the-songwriter-pillar { height: 400px; }
 
 .audio-players { display: flex; align-items: end;}
 
